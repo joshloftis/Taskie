@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Taskie</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+  <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" type="text/css">
+  <link rel="stylesheet" href="css/login.css" type="text/css">
+  <link rel="stylesheet" href="css/signup.css" type="text/css">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+  <link rel="manifest" href="favicons/manifest.json">
+  <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="site-content">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a id="logo" class="navbar-brand" href="/">Taskie</a>
+        <div class="d-flex justify-content-end" id="navbarSupportedContent">
+          {{#if user}}
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="/profile">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/rewards">Rewards</a>
+              </li>
+            </ul>
+            <form class="form-inline" action="/auth/logout">
+              <button class="btn signup" type="submit">Logout</button>
+            </form>
+          {{else}}
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="document.getElementById('id03').style.display='block'" href="#">Contact Us</a>
+              </li>
+            </ul>
+            <form class="form-inline">
+              <button class="btn login" onclick="document.getElementById('id02').style.display='block'" type="button">Log In</button>
+              <button class="btn signup" onclick="document.getElementById('id01').style.display='block'" type="button">Sign Up</button>
+            </form>
+          {{/if}}
+        </div>
+      </div>
+    </nav>
+
+    {{{ body }}}
+
+    <div id="id01" class="modal">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <form class="modal-content animate" action="/auth/signup" method="POST">
+        <div class="container">
+          <label>
+                      <b>Email</b>
+          </label>
+          <input type="text" placeholder="Enter Email" name="email" required>
+          <label>
+                      <b>Password</b>
+          </label>
+          <input type="password" placeholder="Enter Password" name="password" required>
+
+          <label>
+                      <b>First Name</b>
+          </label>
+          <input type="Text" placeholder="First Name" name="firstName" required>
+          <label>
+                      <b>Last Name</b>
+          </label>
+          <input type="text" placeholder="Last Name" name="lastName" required>
+          <input type="checkbox" checked="checked"> Remember me
+          <p style="color: lightgrey;">By creating an account you agree to our Terms & Privacy.</p>
+          <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+          <div class="clearfix">
+            <button type="submit" class="signupbtn">Sign Up</button>
+            <button class="loginbtn" onclick="location.href='/auth/google'">Login with Google</button>
+            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      // Get the modal
+      var modal = document.getElementById('id01');
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+    </script>
+    <div id="id02" class="modal">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <form class="modal-content animate" action="/auth/login/local" method="POST">
+        <div class="container">
+          <label>
+            <b>Email</b>
+          </label>
+          <input type="text" placeholder="Enter Email" name="email" required>
+          <label>
+            <b>Password</b>
+          </label>
+          <input type="password" placeholder="Enter Password" name="password" required>
+          <button class="loginbtn" type="submit">Login</button>
+          <button class="loginbtn" onclick="location.href='/auth/google'">Login with Google</button>
+          <input type="checkbox" checked="checked"> Remember me
+        </div>
+
+        <div class="container">
+          <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn2">Cancel</button>
+          <span class="psw">Forgot
+                      <a href="#">password?</a>
+                  </span>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      // Get the modal
+      var modal = document.getElementById('id02');
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+    </script>
+    <div id="id03" class="modal">
+      <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <form class="modal-content animate" action="/action_page.php" style="margin-top:0px;">
+
+        <div class="container">
+          <h2>Contact <span class="logomodel">Taskie</span></h2>
+          <label>
+                      <b>*Name:</b>
+                  </label>
+          <input type="text" name="myName" id="myName" required>
+          <label>
+                      <b>*E-mail:</b>
+                  </label>
+          <input type="text" name="myEmail" id="myEmail" required>
+          <label for="experience">
+                    <b>Comments:</b>
+                  </label>
+          <textarea name="experience" id="experience" rows="6" class="col-md-12"></textarea>
+          <button class="loginbtn" type="submit">Send Now</button>
+          <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn2">Cancel</button>
+        </div>
+      </form>
+    </div>
+    <script>
+      var modal = document.getElementById('id03');
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+    </script>
+
+    <!--[ footer ] -->
+
+  </div>
+  <footer class="footer">
+    <div class="container text-center">
+      <span class="text-muted">&copy; The 27ers</span>
+    </div>
+  </footer>
+</body>
+
+</html>

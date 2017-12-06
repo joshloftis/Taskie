@@ -1,0 +1,65 @@
+<head>
+  <style>
+    body {
+      background-image: none;
+    }
+  </style>
+</head>
+<div class="container all-profile-content">
+  <div class="row bottom-border">
+    <div class="col-7">
+      <div class="row">
+        <img class="userpic" src="{{user.thumbnail}}">
+        <p id="welcomeText" class="welcome-text align-this">Welcome back, {{user.firstName}} {{user.lastName}}</p>
+      </div>
+    </div>
+    <div class="col-5 align-this task-form-group">
+      <p id="createNewTask" class="text-right">+ New Task</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="offset-7 col-5">
+      <div id="addTaskForm" class="task-form-div">
+        <h4>Add a new task</h4>
+        <form action="/profile/api/task" method="post">
+          <input type="text" class="form-control task-form" placeholder="Task Description" name="description" maxlength="50">
+          <textarea class="form-control task-text-area" placeholder="Task Details" name="details" maxlength="250"></textarea>
+          <button type="submit" class="btn btn-sm btn-task">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="row main-content-area">
+    <div class="col-12 col-md-6">
+      <h3 class="intro"><strong>Your Tasks</strong></h3>
+
+      <p class="user-task-title">Current Active Tasks</p>
+      <div id="myCurrentTasks" class="user-task-area">
+        <div id="myTasks" class="user-task-area">
+        </div>
+      </div>
+
+      <p class="user-task-title">Tasks You've Picked Up</p>
+      <div id="myAssignedTasks" class="user-task-area">
+        <div id="pickedUp" class="user-task-area">
+        </div>
+      </div>
+
+      <p class="user-task-title">My Completed Tasks</p>
+      <div id="myCompletedTasks" class="user-task-area">
+        <div id="completed" class="user-task-area">
+        </div>
+      </div>
+
+    </div>
+    <div class="col-12 col-md-6 need-border">
+      <h3 class="intro"><strong>Other's Tasks</strong></h3>
+      <div id="othersOpenTasks" class="user-task-area">
+        <div id="allTasks" class="user-task-area">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>let id = {{user.id}}</script>
+<script src="./js/taskie.js"></script>

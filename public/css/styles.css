@@ -1,0 +1,566 @@
+/*Fonts:
+Taskie logo: Pacifico
+All other fonts are Open Sans
+Both are available at fonts.google.com
+Font Sizes:
+Taskie logo on sign up and sign in pages: 72px
+Taskie main logo: 48px
+Homepage text: 36px
+User and Other's tasks text: 36px
+Nav links: 18px
+Sign in/sign up buttons and links: 18px
+Welcome back text: 18px
+Tasks text (all): 15px
+Add new task text: 15px
+Sign in/sign up form placeholder text: 14px
+Sign up terms of service: 12px
+Copyright text: 10px
+Colors:
+Green: #3BE67F
+Black: #565656
+Footer background: #e0e0e0
+Borders: #e0e0e0
+Stars: #FFE522
+Drop shadow: rgba(187, 187, 187, 0.5)
+Background image should have background-color of rgba(0,0,0,0.5)*/
+
+body {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("pisidesign-equipe-color.jpg");
+  line-height: 1.0;
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.site-content {
+  flex: 1;
+}
+
+.footer {
+  background-color: #f8f9fa!important;
+}
+.text-muted {
+  font-size: 12px;
+}
+/*header stuff*/
+#headerinline {
+  background: white;
+}
+
+#logo {
+  color: #3BE67F;
+  font-family: 'Pacifico', cursive;
+  font-size: 48px;
+  margin-left: -40px;
+}
+
+#navbarSupportedContent {
+  margin-right: -40px;
+}
+
+.logomodel {
+  color: #3BE67F;
+  font-family: 'Pacifico', cursive;
+  font-size: 48px;
+  background: white;
+}
+
+.headerlinks {
+  font-size: 18px;
+}
+
+
+.btn-info {
+  margin-top: 5px;
+  margin-left: 7px;
+  margin-right: 7px;
+  margin-bottom: 5px;
+}
+
+.blackfx {
+  color: #565656;
+  background-color: white;
+  border-color: #565656;
+}
+
+.blackfx:hover {
+  color: white;
+  background-color: #565656;
+}
+
+.greenfx {
+  color: #3BE67F;
+  background-color: white;
+  border-color: #3BE67F;
+}
+
+.greenfx:hover {
+  color: #565656;
+  background-color: #3BE67F;
+}
+
+/*footer stuff*/
+.footerfool {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.footertext {
+  color: silver;
+  text-align: center;
+  font-size: 14px;
+}
+
+
+h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 3em;
+    margin: .2em .5em;
+    color: #3BE67F;
+}
+
+h3 {
+    font-family: 'Open Sans', sans-serif;
+
+}
+h2{
+    font-family: 'Open Sans', sans-serif;
+}
+.intro{
+    color: #3BE67F;
+}
+
+
+.centerthisplease {
+  align-items: center;
+}
+
+.moveyouhoe {
+  margin-left: 5%;
+}
+
+header {
+    background-color: white;
+}
+button {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.white-align {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    background-color: transparent;
+}
+
+.button1 {
+    background-color: transparent;
+    border: white;
+    color: #3BE67F;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button1 {
+    background-color: white;
+    color: #3BE67F;
+    border: 2px solid white;
+    border-radius: 4px;
+}
+
+.button1:hover {
+    background-color: #3BE67F;
+    color: white;
+}
+
+.button2 {
+    background-color: transparent;
+    border: white;
+    color: #3BE67F;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button2 {
+    background-color: white;
+    color: white;
+    border: 2px solid white;
+    border-radius: 4px;
+}
+
+.button2:hover {
+    background-color: #3BE67F;
+    color: white;
+}
+
+.button3 {
+    background-color: #3BE67F;
+    border: white;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button3 {
+    background-color: white;
+    color: #3BE67F;
+    border: 2px solid white;
+    border-radius: 4px;
+}
+
+.button3:hover {
+    background-color: #3BE67F;
+    color: white;
+
+}
+
+.button4 {
+    background-color: transparent;
+    border: white;
+    color: #3BE67F;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button4 {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 4px;
+}
+
+.button4:hover {
+    background-color: #3BE67F;
+    color: white;
+}
+
+button a:link {
+    color: #3BE67F;
+}
+
+button a:visited {
+    color: #3BE67F;
+}
+
+button a:hover {
+    color: black;
+}
+
+button a:active {
+    color: #3BE67F;
+    background-color: white;
+
+}
+
+.model {
+  padding-top: 1px;
+}
+
+nav>.container {
+  padding: 0 16px;
+}
+
+.nav-item {
+  margin-left: 20px;
+}
+.login {
+  background: none;
+  border: 1px solid #565656;
+  color: #565656;
+  margin-left: 20px;
+}
+
+.login:hover {
+  background: #565656;
+  border: 1px solid #565656;
+  color: white;
+}
+
+.signup {
+  background: none;
+  border: 1px solid #3BE67F;
+  color: #3BE67F;
+  margin-left: 20px;
+}
+
+.signup:hover {
+  background: #3BE67F;
+  border: 1px solid #3BE67F;
+  color: white;
+}
+
+.userpic {
+  border-radius: 50px;
+  height: 50px;
+}
+
+.welcome-text {
+  color: #565656;
+  text-align: left;
+  margin-left: 15px;
+}
+
+.align-this {
+  padding-top: 20px;
+}
+
+.bottom-border {
+  border-bottom: 1px solid #F6F6F6;
+}
+
+.user-task-title {
+  padding: 10px;
+  font-size: 14px;
+  padding-bottom: -50px;
+  cursor: pointer;
+}
+
+.user-task-area {
+  padding: 0 10px 10px 10px;
+  font-size: 12px;
+}
+
+.btn-add-task {
+  background-color: #3BE67F;
+  border: 1px solid #3BE67F;
+}
+
+.btn-add-task:hover {
+  background-color: white;
+  border: 1px solid #3BE67F;
+  color: #3BE67F;
+}
+
+#createNewTask {
+  color: #3BE67F;
+  cursor: pointer;
+  margin-right: -20px;
+}
+
+.need-border {
+  border-left: 1px solid #F6F6F6;
+}
+
+.btn-task {
+  color: #3BE67F;
+  background: none;
+  border: 1px solid #3BE67F;
+  min-width: 6em;
+  font-size: 12px;
+}
+
+.cancel {
+  background: none;
+  border: 1px solid #565656;
+  color: #565656;
+  min-width: 6em;
+  font-size: 12px;
+}
+
+.cancel:hover {
+  background: #565656;
+  border: 1px solid #565656;
+  color: white;
+  min-width: 6em;
+  font-size: 12px;
+}
+
+.btn-task:hover {
+  background-color: #3BE67F;
+  border: 1px solid #3BE67F;
+  color: white;
+}
+
+.task-space {
+  padding: 5px 0;
+}
+
+.middle-this {
+  margin-top: 8px;
+}
+
+.dot {
+  display:inline-block;
+  width:0.7em;
+  height:0.7em;
+  border-radius:50%;
+  background-color: #3BE67F;
+  margin-right: 10px;
+}
+
+.dot-unassigned {
+  display:inline-block;
+  width:0.7em;
+  height:0.7em;
+  border-radius:50%;
+  border: 1px solid #3BE67F;
+  margin-right: 10px;
+}
+
+.all-profile-content {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.intro {
+  margin-top: 30px;
+}
+
+.white-text {
+  color: white;
+  line-height: 40px;
+}
+.home-content {
+  height: 500px;
+}
+.home-main-content {
+  position: relative;
+  top: 50%;
+  transform: perspective(1px) translateY(-50%);
+}
+
+.strikethrough {
+  text-decoration: line-through;
+  color: #B6B6B6;
+}
+
+.task-form-group {
+  position: relative;
+  display: inline-block;
+}
+
+.task-form-div {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 400px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 10000;
+}
+
+.show {
+  display: block;
+}
+
+#addTaskForm {
+  padding: 20px;
+  margin-top: 5px;
+}
+
+input[type="text"].task-form {
+  padding: 10px;
+  font-size: 13px;
+}
+
+.task-text-area {
+  margin-bottom: 10px;
+  font-size: 13px;
+  padding: 10px;
+}
+
+.task-description-row {
+  cursor: pointer;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.task-description-row-background {
+  cursor: pointer;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-top: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+  border-left: 1px solid #e0e0e0;
+  border-radius: 4px 4px 0 0;
+  background: #f8f9fa;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+.task-description-row:hover {
+  background: #f8f9fa;
+  border-radius: 4px 4px 0 0;
+}
+
+.task-details-row {
+  display: none;
+  border-radius: 0 0 4px 4px;
+  padding: 15px;
+  padding-right: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  border-left: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+}
+
+.task-details-row>p {
+  line-height: 1.5em;
+}
+.indent-text {
+  display: inline-block;
+  text-indent: -1.9em;
+  padding-left: 1.9em;
+  line-height: 1.4em;
+}
+
+.modal-backdrop {
+  z-index: 0;
+}
+
+.message-text {
+  font-size: 14px;
+  padding: 10px;
+}
+
+.italics {
+  font-style: italic;
+}
+
+.rewards-content {
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 576px) {
+  .userpic {
+    display: none;
+  }
+
+  #logo {
+    margin-left: 0px;
+  }
+
+  #navbarSupportedContent {
+    margin-right: 0px;
+  }
+}
