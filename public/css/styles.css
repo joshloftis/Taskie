@@ -1,38 +1,19 @@
-/*Fonts:
-Taskie logo: Pacifico
-All other fonts are Open Sans
-Both are available at fonts.google.com
-Font Sizes:
-Taskie logo on sign up and sign in pages: 72px
-Taskie main logo: 48px
-Homepage text: 36px
-User and Other's tasks text: 36px
-Nav links: 18px
-Sign in/sign up buttons and links: 18px
-Welcome back text: 18px
-Tasks text (all): 15px
-Add new task text: 15px
-Sign in/sign up form placeholder text: 14px
-Sign up terms of service: 12px
-Copyright text: 10px
-Colors:
-Green: #3BE67F
-Black: #565656
-Footer background: #e0e0e0
-Borders: #e0e0e0
-Stars: #FFE522
-Drop shadow: rgba(187, 187, 187, 0.5)
-Background image should have background-color of rgba(0,0,0,0.5)*/
-
-body {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("pisidesign-equipe-color.jpg");
+* {
+  color: #565656;
+  font-size: 14px;
   line-height: 1.0;
   font-family: 'Open Sans', sans-serif;
+}
+body {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("pisidesign-equipe-color.jpg");
   display: flex;
   min-height: 100vh;
   flex-direction: column;
 }
 
+.container {
+    padding: 16px;
+}
 .site-content {
   flex: 1;
 }
@@ -48,238 +29,26 @@ body {
   background: white;
 }
 
-#logo {
-  color: #3BE67F;
+.navbar-brand {
+  margin-left: -40px;
+}
+
+.logo {
+  color: #3BE67F!important;
   font-family: 'Pacifico', cursive;
   font-size: 48px;
-  margin-left: -40px;
 }
 
 #navbarSupportedContent {
   margin-right: -40px;
 }
 
-.logomodel {
-  color: #3BE67F;
-  font-family: 'Pacifico', cursive;
-  font-size: 48px;
-  background: white;
-}
-
-.headerlinks {
-  font-size: 18px;
-}
-
-
-.btn-info {
-  margin-top: 5px;
-  margin-left: 7px;
-  margin-right: 7px;
-  margin-bottom: 5px;
-}
-
-.blackfx {
-  color: #565656;
-  background-color: white;
-  border-color: #565656;
-}
-
-.blackfx:hover {
-  color: white;
-  background-color: #565656;
-}
-
-.greenfx {
-  color: #3BE67F;
-  background-color: white;
-  border-color: #3BE67F;
-}
-
-.greenfx:hover {
-  color: #565656;
-  background-color: #3BE67F;
-}
-
-/*footer stuff*/
-.footerfool {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
-
-.footertext {
-  color: silver;
-  text-align: center;
-  font-size: 14px;
-}
-
-
 h1 {
-    font-family: 'Pacifico', cursive;
     font-size: 3em;
-    margin: .2em .5em;
-    color: #3BE67F;
 }
 
-h3 {
-    font-family: 'Open Sans', sans-serif;
-
-}
-h2{
-    font-family: 'Open Sans', sans-serif;
-}
 .intro{
     color: #3BE67F;
-}
-
-
-.centerthisplease {
-  align-items: center;
-}
-
-.moveyouhoe {
-  margin-left: 5%;
-}
-
-header {
-    background-color: white;
-}
-button {
-    font-family: 'Open Sans', sans-serif;
-}
-
-.white-align {
-    color: white;
-    font-family: 'Open Sans', sans-serif;
-    text-align: center;
-    background-color: transparent;
-}
-
-.button1 {
-    background-color: transparent;
-    border: white;
-    color: #3BE67F;
-    padding: 16px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
-    cursor: pointer;
-}
-
-.button1 {
-    background-color: white;
-    color: #3BE67F;
-    border: 2px solid white;
-    border-radius: 4px;
-}
-
-.button1:hover {
-    background-color: #3BE67F;
-    color: white;
-}
-
-.button2 {
-    background-color: transparent;
-    border: white;
-    color: #3BE67F;
-    padding: 16px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
-    cursor: pointer;
-}
-
-.button2 {
-    background-color: white;
-    color: white;
-    border: 2px solid white;
-    border-radius: 4px;
-}
-
-.button2:hover {
-    background-color: #3BE67F;
-    color: white;
-}
-
-.button3 {
-    background-color: #3BE67F;
-    border: white;
-    color: white;
-    padding: 16px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
-    cursor: pointer;
-}
-
-.button3 {
-    background-color: white;
-    color: #3BE67F;
-    border: 2px solid white;
-    border-radius: 4px;
-}
-
-.button3:hover {
-    background-color: #3BE67F;
-    color: white;
-
-}
-
-.button4 {
-    background-color: transparent;
-    border: white;
-    color: #3BE67F;
-    padding: 16px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
-    cursor: pointer;
-}
-
-.button4 {
-    background-color: transparent;
-    color: white;
-    border: 2px solid white;
-    border-radius: 4px;
-}
-
-.button4:hover {
-    background-color: #3BE67F;
-    color: white;
-}
-
-button a:link {
-    color: #3BE67F;
-}
-
-button a:visited {
-    color: #3BE67F;
-}
-
-button a:hover {
-    color: black;
-}
-
-button a:active {
-    color: #3BE67F;
-    background-color: white;
-
 }
 
 .model {
@@ -317,6 +86,19 @@ nav>.container {
   background: #3BE67F;
   border: 1px solid #3BE67F;
   color: white;
+}
+
+.getstarted {
+  margin-top: 20px;
+  border: 1px solid white;
+  padding: 10px 20px;
+  background: none;
+  color: white;
+}
+
+.getstarted:hover {
+  background: white;
+  color: #565656;
 }
 
 .userpic {
@@ -550,6 +332,113 @@ p {
 .rewards-content {
   margin-top: 20px;
 }
+
+.headline-text {
+  margin-top: 40px;
+}
+
+.get-in-div {
+  margin-top: 40px;
+}
+
+.get-in-div-div {
+  padding: 30px;
+  -webkit-box-shadow: 0px 0px 29px 0px rgba(187,187,187,0.5);
+  -moz-box-shadow: 0px 0px 29px 0px rgba(187,187,187,0.5);
+  box-shadow: 0px 0px 29px 0px rgba(187,187,187,0.5);
+  border-radius: 4px;
+}
+
+.get-in-btn {
+  border: 1px solid #565656;
+  background: none;
+  color: #565656;
+  width: 100%;
+  padding: 10px;
+}
+
+.green {
+  background: none;
+  border: 1px solid #3BE67F;
+  color: #3BE67F;
+  width: 100%;
+  padding: 10px;
+}
+
+.get-in-btn:hover {
+  border: 1px solid #565656;
+  background: #565656;
+  color: white;
+}
+
+.green:hover {
+  background: #3BE67F;
+  border: 1px solid #3BE67F;
+  color: white;
+}
+
+.get-in-form>input {
+  margin-bottom: 25px;
+  padding: 10px;
+}
+
+.forgot-password {
+  margin-top:10px;
+  padding: 40px 40px 0 40px;
+}
+.forgot-password>a {
+  text-decoration: none;
+  color: #565656;
+}
+
+.forgot-password>a:hover {
+  color: #3BE67F;
+}
+
+a.nav-link {
+  margin-top: 3px;
+}
+
+.form-check-label {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 20px;
+}
+
+.form-check-label input {
+  position: absolute;
+  opacity: 0;
+}
+
+.radio {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 11px;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: 1px solid #3BE67F;
+    background: white;
+}
+
+/* On mouse-over, add a grey background color */
+.form-check-label:hover input ~ .radio {
+  border: rgba(59, 230, 127, 0.4);
+  background: rgba(59, 230, 127, 0.4);
+}
+
+.form-check-label input:checked ~ .radio {
+    border: #3BE67F;
+    background-color: #3BE67F;
+}
+
 
 @media only screen and (max-width: 576px) {
   .userpic {

@@ -1,1 +1,38 @@
-
+<head>
+  <style>
+    body {
+      background-image: none;
+      line-height: 1.0;
+      font-family: 'Open Sans', sans-serif;
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+      color: #565656
+      font-size: 10px;
+    }
+  </style>
+</head>
+<div class="container">
+  <div class="aligner">
+    <h1 class="text-center headline-text">Log In to <span class="logo">Taskie</span></h1>
+    <div class="row get-in-div">
+      <div class="get-in-div-div col-12 offset-md-3 col-md-6 ">
+        <form class="get-in-form">
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="email">
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <button type="submit" class="btn get-in-btn">No account? Sign up</button>
+            </div>
+            <div class="col-12 col-md-6">
+              <button type="button" onclick="location.href='signup'" class="btn get-in-button green">Log In</button>
+            </div>
+          </div>
+          <div class="text-center forgot-password">
+            <a href="#">Forgot your password?</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

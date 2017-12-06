@@ -1,63 +1,33 @@
-<!DOCTYPE HTML>
-<html lang="en">
-
 <head>
-    <title>Taskie Signup</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:600|Pacifico" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css" type="text/css"/>
-    <link rel="stylesheet" href="css/signup.css" type="text/css"/>
-</head>
-
-<body>
-    <a class="col-md-8"></a>
-    <h3 class="intro container col-md-4" style="text-align: center; color: white; background-color: transparent !important;">Taskie Signup!</h3>
-    <h4 class="intro container col-md-8" style=" color: white; background-color: transparent !important;">To sign up for Taskie click the Sign Up button below.</h4>
-    <div  class="row">
-      <div class="col-md-4"></div>
-      <button onclick="document.getElementById('id01').style.display='block'" class="button4 col-md-4">Sign Up</button>
-    </div>
-    <div id="id01" class="modal">
-        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
-            <form class="modal-content animate" action="/action_page.php">
-                <div class="container">
-                    <label><b>Email</b></label>
-                    <input type="text" placeholder="Enter Email" name="email" required>
-
-                    <label><b>Password</b></label>
-                    <input type="password" placeholder="Enter Password" name="psw" required>
-
-                    <label><b>Repeat Password</b></label>
-                    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-                    <input type="checkbox" checked="checked"> Remember me
-                    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-
-                    <div class="clearfix">
-                        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                        <button type="submit" class="signupbtn">Sign Up</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-
-<script>
-// Get the modal
-var modal = document.getElementById('id01');
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+  <style>
+    body {
+      background-image: none;
     }
-}
-</script>
-
-</body>
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js " integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh " crossorigin="anonymous "></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js " integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ " crossorigin="anonymous "></script>
-
-</html>
+  </style>
+</head>
+<div class="container">
+  <h1 class="text-center headline-text">Sign Up for <span class="logo">Taskie</span></h1>
+  <div class="row get-in-div">
+    <div class="get-in-div-div col-12 offset-md-3 col-md-6 ">
+      <form class="get-in-form">
+        <input type="text" class="form-control" placeholder="First Name" name="firstName">
+        <input type="text" class="form-control" placeholder="Password" name="lastName">
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="email">
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="I have read and agree to the Terms of Service."> I have read and agree to the Terms of Service.
+                <span class="radio"></span>
+              </label>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <button type="button" onclick="location.href='signup'" class="btn get-in-button green">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
