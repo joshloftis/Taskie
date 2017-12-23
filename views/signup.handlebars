@@ -8,14 +8,14 @@
 <div class="container">
   <h1 class="text-center headline-text">Sign Up for <span class="logo">Taskie</span></h1>
   <div class="row get-in-div">
-    <div class="get-in-div-div col-12 offset-md-3 col-md-6 ">
-      <form class="get-in-form">
+    <div class="get-in-div-div col-12 col-sm-12 offset-md-2 col-md-8 offset-lg-3 col-lg-6">
+      <form class="get-in-form" action="/auth/signup" method="POST">
         <input type="text" class="form-control" placeholder="First Name" name="firstName">
-        <input type="text" class="form-control" placeholder="Password" name="lastName">
+        <input type="text" class="form-control" placeholder="Last Name" name="lastName">
         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="email">
         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
         <div class="row">
-          <div class="col-12 col-md-6">
+          <div class="col-6 col-sm-6 col-md-6">
             <div class="form-check form-check-inline">
               <label class="form-check-label">
                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="I have read and agree to the Terms of Service."> I have read and agree to the Terms of Service.
@@ -23,8 +23,15 @@
               </label>
             </div>
           </div>
-          <div class="col-12 col-md-6">
-            <button type="button" onclick="location.href='signup'" class="btn get-in-button green">Submit</button>
+          <div class="col-6 col-sm-6 col-md-6">
+            <button type="submit" class="btn get-in-button green">Submit</button>
+          </div>
+        </div>
+        <hr>
+        <div class="google-signup">
+          <p class="text-center">You can also sign up with Google</p>
+          <div class="text-center">
+            <button type="button" onclick="location.href='/auth/google'" class="btn get-in-button green">Sign up with Google+</button>
           </div>
         </div>
       </form>

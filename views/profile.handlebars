@@ -18,12 +18,12 @@
     </div>
   </div>
   <div class="row">
-    <div class="offset-7 col-5">
+    <div class="offset-md-9 col-md-3">
       <div id="addTaskForm" class="task-form-div">
         <h4>Add a new task</h4>
         <form action="/profile/api/task" method="post">
-          <input type="text" class="form-control task-form" placeholder="Task Description" name="description" maxlength="50">
-          <textarea class="form-control task-text-area" placeholder="Task Details" name="details" maxlength="250"></textarea>
+          <input type="text" class="form-control task-form" placeholder="Task Description" name="description" maxlength="50" required>
+          <textarea class="form-control task-text-area" placeholder="Task Details" name="details" maxlength="250" required></textarea>
           <button type="submit" class="btn btn-sm btn-task">Submit</button>
         </form>
       </div>

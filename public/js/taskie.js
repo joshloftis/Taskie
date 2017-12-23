@@ -38,7 +38,7 @@ var taskie = {
       url: '/profile/api/curr_user',
       method: 'GET'
     }).done(response => {
-      console.log(response);
+      console.table(response);
       for (let i=0;i<response.length;i++) {
         if (response[i].status == false && response[i].Assignment == null) {
           let p =
