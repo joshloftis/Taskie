@@ -1,14 +1,14 @@
 var taskie = {
-  init: function() {
+  init() {
     this.cacheDom();
     this.bindEvents();
     this.render();
   },
-  cacheDom: function() {
+  cacheDom() {
     this.$curUserTask = $('#myTasks');
     this.$curUserPickedUp = $('#pickedUp');
     this.$otherUserTasks = $('#allTasks');
-    this.pickUp = $(`<button class="btn btn-sm btn-add-task pickUp">Pick Up</button>`);
+    this.pickUp = $('<button class="btn btn-sm btn-add-task pickUp">Pick Up</button>');
     this.addForm = $('#addTaskForm');
     this.createTaskText = $('#createNewTask');
     this.$welcomeText = $('#welcomeText');
@@ -18,10 +18,10 @@ var taskie = {
     this.$myAssignedTasks = $('#myAssignedTasks');
     this.$myCompletedTasks = $('#myCompletedTasks');
   },
-  bindEvents: function() {
+  bindEvents() {
     this.createTaskText.on('click', this.showTaskForm.bind(this));
   },
-  render: function() {
+  render() {
     taskie.$curUserTask.empty();
     taskie.$curUserPickedUp.empty();
     taskie.$otherUserTasks.empty();
@@ -33,15 +33,15 @@ var taskie = {
     this.addForm.hide();
     $('.task-details-row').hide();
   },
-  currUser: function() {
+  currUser() {
     $.ajax({
       url: '/profile/api/curr_user',
-      method: 'GET'
-    }).done(response => {
+      method: 'GET',
+    }).done((response) => {
       console.table(response);
-      for (let i=0;i<response.length;i++) {
+      for (let i = 0; i < response.length; i++) {
         if (response[i].status == false && response[i].Assignment == null) {
-          let p =
+          const p =
             $(`<div class="row task-space">
                 <div class="col-12 middle-this">
                   <p class="indent-text">
@@ -52,7 +52,7 @@ var taskie = {
               </div>`);
           taskie.$curUserTask.append(p);
         } else if (response[i].status == false) {
-          let p =
+          const p =
             $(`<div class="row task-space">
                 <div class="col-5 middle-this">
                   <p class="indent-text">
@@ -71,15 +71,14 @@ var taskie = {
       }
     });
   },
-  usersTasks: function() {
+  usersTasks() {
     $.ajax({
       url: 'profile/api/other/tasks',
-      method: 'GET'
-    }).done(response => {
-      console.log(response);
-      for (let i=0;i<response.length;i++) {
+      method: 'GET',
+    }).done((response) => {
+      for (let i = 0; i < response.length; i++) {
         if (response[i].Assignment == null) {
-          let p =
+          const p =
             $(`<div class="row task-space">
               <div class="col-5 middle-this">
                 <p class="indent-text">
@@ -100,15 +99,14 @@ var taskie = {
       }
     });
   },
-  currUserAssignments: function() {
+  currUserAssignments() {
     $.ajax({
       url: '/profile/api/curr_user/assignments',
-      method: 'GET'
-    }).done(response => {
-      console.log(response);
-      for (let i=0;i<response.length;i++) {
+      method: 'GET',
+    }).done((response) => {
+      for (let i = 0; i < response.length; i++) {
         if (response[i].Task.status == false) {
-          let p =
+          const p =
             $(`<div class="task-space">
                 <div id="Task_ID${response[i].Task.id}" class="row task-description-row">
                   <div class="col-5 middle-this">
@@ -134,15 +132,14 @@ var taskie = {
       }
     });
   },
-  allMyCompletedTasks: function() {
+  allMyCompletedTasks() {
     $.ajax({
       url: '/profile/api/curr_user',
-      method: 'GET'
-    }).done(response => {
-      console.log(response);
-      for (let i=0;i<response.length;i++) {
+      method: 'GET',
+    }).done((response) => {
+      for (let i = 0; i < response.length; i++) {
         if (response[i].status == true && response[i].reward == false) {
-          let p =
+          const p =
             $(`<div class="task-space">
                 <div class="row task-description-row">
                   <div class="col-5 middle-this">
@@ -167,7 +164,7 @@ var taskie = {
             </div>`);
           taskie.$myCompletedTasks.append(p);
         } else if (response[i].status == true && response[i].reward == true) {
-          let p =
+          const p =
             $(`<div class="task-space">
                 <div class="row task-description-row">
                   <div class="col-5 middle-this">
@@ -191,63 +188,55 @@ var taskie = {
       }
     });
   },
-  showTaskForm: function() {
+  showTaskForm() {
     this.addForm.toggle(300);
-  }
+  },
 };
 
 taskie.init();
 
-$(document).on('click', '.pickUp', function(){
-  let taskId= $(this).data('id');
-  console.log(taskId);
+$(document).on('click', '.pickUp', function () {
+  const taskId = $(this).data('id');
   $.ajax({
-    url: '/profile/api/grab/task/' + taskId,
-    method: 'POST'
+    url: `/profile/api/grab/task/${taskId}`,
+    method: 'POST',
   }).then((response) => {
-    console.log("Picked up");
     taskie.render();
   });
 });
 
-$(document).on('click', '.done', function(){
-  let taskId= $(this).data('id');
-  console.log(taskId);
+$(document).on('click', '.done', function () {
+  const taskId = $(this).data('id');
   $.ajax({
-    url: '/profile/api/complete/task/' + taskId,
-    method: 'PUT'
+    url: `/profile/api/complete/task/${taskId}`,
+    method: 'PUT',
   }).then((response) => {
-    console.log("Picked up");
     taskie.render();
   });
 });
 
-$(document).on('click', '.task-description-row', function() {
+$(document).on('click', '.task-description-row', function () {
   $(this).toggleClass('task-description-row-background');
   $(this).parent().find('.task-details-row').toggle(200);
 });
 
-$(document).on('click', '.reward', function(event){
+$(document).on('click', '.reward', function (event) {
   event.preventDefault();
   $(this).parent().find('.task-details-row').toggle(200);
-  let _UserId = $(this).data('rewardid');
-  let _TaskId = $(this).data('taskid');
-  let description = $('#message-title' + _TaskId).val();
-  let details = $('#message-details' + _TaskId).val();
-  let data = {
-    description: description,
-    details: details,
+  const _UserId = $(this).data('rewardid');
+  const _TaskId = $(this).data('taskid');
+  const description = $(`#message-title${_TaskId}`).val();
+  const details = $(`#message-details${_TaskId}`).val();
+  const data = {
+    description,
+    details,
   };
-  console.log(description);
-  console.log(details);
-  console.log(_UserId);
-  console.log(_TaskId);
 
   $.ajax({
-    url: '/rewards/api/curr_user/' + _UserId + "/" + _TaskId,
+    url: `/rewards/api/curr_user/${_UserId}/${_TaskId}`,
     method: 'POST',
-    data: data
-  }).then(response => {
+    data,
+  }).then((response) => {
     location.reload();
   });
 });
