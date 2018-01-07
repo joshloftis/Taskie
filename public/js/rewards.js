@@ -1,25 +1,24 @@
 var rewards = {
-  init: function() {
+  init() {
     this.cacheDom();
     this.bindEvents();
     this.render();
   },
-  cacheDom: function() {
+  cacheDom() {
     this.$rewardsArea = $('#rewardArea');
   },
-  bindEvents: function() {
+  bindEvents() {
   },
-  render: function() {
+  render() {
     this.myRewards();
   },
-  myRewards: function() {
+  myRewards() {
     $.ajax({
       url: '/rewards/api/curr_user',
-      method: 'GET'
-    }).done(response => {
-      console.log(response);
-      for (let i=0;i<response.length;i++) {
-        let p =
+      method: 'GET',
+    }).done((response) => {
+      for (let i = 0; i < response.length; i++) {
+        const p =
           $(`<div class="task-space">
               <div class="row task-description-row">
                 <div class="col-5 middle-this">
@@ -47,7 +46,7 @@ var rewards = {
 
 rewards.init();
 
-$(document).on('click', '.task-description-row', function() {
+$(document).on('click', '.task-description-row', function () {
   $(this).toggleClass('task-description-row-background');
   $(this).parent().find('.task-details-row').toggle(200);
 });
